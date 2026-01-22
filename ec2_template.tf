@@ -1,6 +1,6 @@
 resource "aws_launch_template" "my_server" {
-  name_prefix   = "my_server"
-  #key_name      = "teste" -- If you want to use SSH
+  name_prefix = "my_server"
+  #key_name      = "your_key_name" -- If you want to use SSH
   image_id      = "ami-03fb142dfda5eefb1"
   instance_type = var.instance_type
   network_interfaces {
@@ -9,8 +9,8 @@ resource "aws_launch_template" "my_server" {
   }
 
   iam_instance_profile {
-  name = aws_iam_instance_profile.ec2_profile.name
-}
+    name = aws_iam_instance_profile.ec2_profile.name
+  }
 
 
   user_data = base64encode(<<EOF

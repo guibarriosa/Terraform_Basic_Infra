@@ -10,7 +10,7 @@ locals {
       port        = 80
       description = "HTTP"
       protocol    = "tcp"
-  }
+    }
   ]
 }
 
